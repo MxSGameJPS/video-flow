@@ -26,6 +26,11 @@ body {
     text-align: center;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 /* CABEÇALHO */
 
 .cabecalho__container {
@@ -158,6 +163,23 @@ body {
     background-color: var(--branco);
 }
 
+.menu__container::-webkit-scrollbar {
+    width: 16px;
+    background: transparent;
+}
+
+.menu__container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.menu__container-wrapper:hover
+.menu__container::-webkit-scrollbar-thumb {
+    background: var(--cinza-medio);
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
 .icone__inicio::before {
     content: url(../img/sidebar/home.png);
 }
@@ -250,18 +272,19 @@ body {
     transform: translateX(0); */
 }
 
-.superior__secao__container-wrapper{
+.superior__itens {
     position: relative;
+    overflow-x: scroll;
 }
 
 .superior__item {
+    display: inline-block;
     color: var(--cinza-escuro);
     font-size: 16px;
     background-color: var(--cinza-claro);
     border-radius: 20px;
     padding: 8px 20px;
     cursor: pointer;
-    width: 200px;
 }
 
 .superior__item:hover {
@@ -271,9 +294,6 @@ body {
 }
 
 .superior__slider{
-    position: absolute;
-    right: 0%;
-    width: 4%;
     height: 100%;
     background-color: var(--branco);
 }
@@ -305,11 +325,6 @@ iframe{
 .descricao-video .titulo-canal {
     font-size: 14px;
     color: var(--cinza-escuro);
-}  
-
-::-webkit-scrollbar{
-    width: 0px;
-    height: 0px;
 }
 
 @media(min-width: 834px) {
